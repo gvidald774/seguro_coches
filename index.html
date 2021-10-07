@@ -6,8 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de seguro de coches</title>
     <script src="formulario.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <p>hola buenas tardes</p>
+    <form>
+        <input type="radio" name="tipo" id="tipoPersona" value="persona" />
+        <label for="tipoPersona">Persona</label>
+        <input type="radio" name="tipo" id="tipoEmpresa" value="empresa" />
+        <label for="tipoEmpresa">Empresa</label>
+        <!-- Formulario de persona -->
+        <div id="contenedorPersona" class="oculto">
+            <p>Aquí van las cosas de la persona.</p>
+        </div>
+        <div id="contenedorEmpresa" class="oculto">
+            <p>Aquí van las cosas de la empresa.</p>
+        </div>
+        <div id="contenedorVehiculo" class="visible">
+            <!-- Lo suyo sería ponerlo al lado en vez de debajo. -->
+            <p>Aquí van las cosas del vehículo.</p>
+        </div>
+    </form>
 </body>
 </html>
