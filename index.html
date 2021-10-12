@@ -38,9 +38,9 @@
             <label for="cp">Código Postal</label>
             <input type="text" name="cp" id="cp" /><br />
             <label for="provincia">Provincia</label>
-            <input type="text" name="provincia" id="provincia" /><br />
+            <input type="select" name="provincia" id="provincia" /><br />
             <label for="municipio">Municipio</label>
-            <input type="text" name="municipio" id="municipio" /><br />
+            <input type="select" name="municipio" id="municipio" /><br />
             <label for="telefono">Teléfono</label>
             <input type="text" name="telefono" id="telefono" /><br />
         </div>
@@ -76,7 +76,8 @@
                 <input type="textarea" name="f_matricula" id="f_matricula" /><br />
             </div>
         </div>
-        <input type="submit" id="botonSubmit" name="botonSubmit" value="Enviar" />
+        <input type="button" id="botonSubmit" name="botonSubmit" value="Enviar" />
+        <p id="errores"></p>
     </form>
 </body>
 </html>
