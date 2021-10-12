@@ -43,6 +43,19 @@ function validaCP(cp)
     }
 }
 
+
+function validaTelefono(tlf)
+{
+    var expresion = /^((\+|00)34)?\d{9}$/;
+
+    var resultado = false;
+
+    if(expresion.test(tlf))
+    {
+        resultado = true;
+    }
+}
+
 function validacionFormulario()
 {
     var error = [];
@@ -113,7 +126,7 @@ function validacionFormulario()
 
         // Código postal
         cp = document.getElementById("cp");
-        if(cp != "")
+        if(cp.value != "")
         {
             if(!validaCP(cp))
             {
@@ -130,8 +143,53 @@ function validacionFormulario()
         // Municipio: Se rellena automáticamente a partir del municipio.
 
         // Teléfono
+        tlf = document.getElementById("telefono")
+        {
+            if(tlf.value != "")
+            {
+                if(!validaTelefono(tlf))
+                {
+                    error.push("Teléfono incorrecto");
+                }
+            }
+            else
+            {
+                error.push("Falta el teléfono");
+            }
+        }
     }
     
+    if (contenidoFechas.className == "visible")
+    {
+        // Validaciones de fecha
+    }
+
+    // Vehículo
+    if (document.getElementById("marca").value == "")
+    {
+        error.push("Falta la marca");
+    }
+    if (document.getElementById("modelo").value == "")
+    {
+        error.push("Falta el modelo");
+    }
+    if (document.getElementById("cilindrada").value == "")
+    {
+        error.push("Falta la cilindrada");
+    }
+    
+    n_puertas = document.getElementById("n_puertas"); // Hay que comprobar que sea número, zagal.
+    if (n_puertas.value != "")
+    {
+        if (n_puertas.value > 5 || n_puertas.value < 2)
+        {
+            error.push("Nº de puertas incorrecto");
+        }
+    }
+    else
+    {
+        error.push("Falta el nº de puertas");
+    }
 
     // Más validaciones
 
@@ -139,24 +197,30 @@ function validacionFormulario()
     {
         imprime_errores(error);
     }
+    else
+    {
+        vacia_errores();
+    }
 
     return resultado;
-
 }
 
 function imprime_errores(errores)
 {
-        var p = document.getElementById("errores");
-        p.innerHTML = "Errores: ";
-        p.innerHTML += "<ul>";
-        errores.forEach(errorIndividual => function()
-        {
-            p.innerHTML +="<li>"+errorIndividual+"</li>";
-        })
-        {
-            
-        }
-        p.innerHTML += "</ul>";
+    var p = document.getElementById("errores");
+    p.innerHTML = "Errores: ";
+    p.innerHTML += "<ul>";
+    for(i = 0; i < errores.length; i++)
+    {
+        p.innerHTML +="<li>"+errores[i]+"</li>";
+    }
+    p.innerHTML += "</ul>";
+}
+
+function vacia_errores(errores)
+{
+    var p = document.getElementById("errores");
+    p.innerHTML = "";
 }
 
 window.addEventListener("load",function()
