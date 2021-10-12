@@ -17,14 +17,66 @@
         <!-- Formulario de persona -->
         <div id="contenedorPersona" class="oculto">
             <p>Aquí van las cosas de la persona.</p>
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" /><br />
+            <label for="Nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" /><br />
+            <label for="Apellidos">Apellidos</label>
+            <input type="text" name="apellido1" id="apellido1" /><input type="text" name="apellido2" id="apellido2" /><br />
         </div>
         <div id="contenedorEmpresa" class="oculto">
             <p>Aquí van las cosas de la empresa.</p>
+            <label for="cif">CIF</label>
+            <input type="text" name="cif" id="cif" /><br />
+            <label for="razon_social">Razón social</label>
+            <input type="text" name="razon_social" id="razon_social" /><br />
+        </div>
+        <div id="contenedorDireccion" class="oculto">
+            <p>Aquí van las cosas de la dirección.</p>
+            <label for="direccion">Dirección</label>
+            <input type="text" name="direccion" id="direccion" /><br />
+            <label for="cp">Código Postal</label>
+            <input type="text" name="cp" id="cp" /><br />
+            <label for="provincia">Provincia</label>
+            <input type="text" name="provincia" id="provincia" /><br />
+            <label for="municipio">Municipio</label>
+            <input type="text" name="municipio" id="municipio" /><br />
+            <label for="telefono">Teléfono</label>
+            <input type="text" name="telefono" id="telefono" /><br />
+        </div>
+        <div id="contenedorFechas" class="oculto">
+            <p>Cuestiones de fechas</p>
+            <label for="fechaNac">Fecha de nacimiento</label>
+            <input type="text" name="fechaNac" id="fechaNac" />
+            <label for="resultado">Resultado</label>
+            <input type="text" name="resultado" id="resultado" /><br />
+            <label for="fechaCarnet">Fecha de carnet</label>
+            <input type="text" name="fechaCarnet" id="fechaCarnet" /><br />
         </div>
         <div id="contenedorVehiculo" class="visible">
-            <!-- Lo suyo sería ponerlo al lado en vez de debajo. -->
             <p>Aquí van las cosas del vehículo.</p>
+            <div id="contenedorVehiculoPrimario">
+                <p>Cuestiones primarias</p>
+                <label for="matricula">Matrícula</label>
+                <input type="text" name="matricula" id="matricula" /><br />
+                <label for="f_matricula">Fecha de matriculacion</label>
+                <input type="text" name="f_matricula" id="f_matricula" /><br />
+            </div>
+            <div id="contenedorVehiculoSecundario">
+                <p>Cuestiones secundarias</p>
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" id="marca" /><br />
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" id="modelo" /><br />
+                <label for="cilindrada">Cilindrada</label>
+                <input type="text" name="cilindrada" id="cilindrada" /><br />
+                <label for="n_puertas">Nº de puertas</label>
+                <input type="text" name="n_puertas" id="n_puertas" /><br />
+                <label for="Extras">Extras:</label><br />
+                <input type="textarea" name="f_matricula" id="f_matricula" /><br />
+            </div>
         </div>
+        <input type="submit" id="botonSubmit" name="botonSubmit" value="Enviar" />
     </form>
 </body>
 </html>
