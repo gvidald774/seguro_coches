@@ -41,6 +41,8 @@ function validaCP(cp)
     {
         resultado = true;
     }
+
+    // Cargar automáticamente lo de la provincia
 }
 
 
@@ -140,7 +142,7 @@ function validacionFormulario()
 
         // Provincia: Se rellena automáticamente a partir del código postal.
 
-        // Municipio: Se rellena automáticamente a partir del municipio.
+        // Municipio: Se rellena automáticamente a partir de la provincia.
 
         // Teléfono
         tlf = document.getElementById("telefono")
@@ -263,4 +265,23 @@ window.addEventListener("load",function()
         }
     }
 
+    selectProvincia = document.getElementById("provincia");
+    selectMunicipio = document.getElementById("municipio");
+
+    cp = document.getElementById("cp");
+    
+    if(validaCP())
+    {
+        selectProvincia.innerHTML = "";
+        
+    }
+
+    selectProvincia.onclick = function()
+    {
+        selectMunicipio.innerHTML = "";
+        for(i = 0; i < provincia[nombreprov].length; i++)
+        {
+            selectMunicipio.innerHTML+="<option>"+provincia[nombreprov][i]+"</option>";
+        }
+    }
 })
