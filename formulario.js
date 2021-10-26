@@ -44,7 +44,6 @@ function validaCP(cp)
     {
         resultado = true;
     }
-
     // Cargar automáticamente lo de la provincia
 
     return resultado;
