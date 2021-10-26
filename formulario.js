@@ -18,6 +18,8 @@ function validaDNI(dni)
     return resultado;
 }
 
+// Validaciones. Seguramente haya una manera mejor de hacer esto porque todas las funciones son iguales.
+
 function validaCIF(cif)
 {
     var expresion = /^([ABCEFGHJNPQRSUVW])(\d{7})([0-9A-J])$/;
@@ -29,6 +31,7 @@ function validaCIF(cif)
         resultado = true;
     }
     // Por poner, comprobaciones ulteriores (los números pares, las letras han de coincidir, etcétera)
+    return resultado;
 }
 
 function validaCP(cp)
@@ -41,8 +44,9 @@ function validaCP(cp)
     {
         resultado = true;
     }
-}
 
+    return resultado;
+}
 
 function validaTelefono(tlf)
 {
@@ -54,6 +58,36 @@ function validaTelefono(tlf)
     {
         resultado = true;
     }
+
+    return resultado;
+}
+
+function validaFecha(fecha)
+{
+    var expresion = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+
+    var resultado = false;
+
+    if(expresion.test(fecha))
+    {
+        resultado = true;
+    }
+
+    return resultado;
+}
+
+function validaMatricula(matricula)
+{
+    var expresion = /^([A-Z]{1-2}(\d{4})([A-Z]{0-2}))|(\d{4}([A-Z]{3}))$/;
+
+    var resultado = false;
+
+    if(expresion.test(matricula))
+    {
+        resultado = true;
+    }
+    
+    return resultado;
 }
 
 function validacionFormulario()
@@ -165,6 +199,32 @@ function validacionFormulario()
     }
 
     // Vehículo
+    matricula = document.getElementById("matricula");
+    if(matricula.value != "")
+    {
+        if(!validaMatricula(matricula))
+        {
+            error.push("Matrícula incorrecta");
+        }
+    }
+    else
+    {
+        error.push("Falta la matrícula");
+    }
+
+    f_mat = document.getElementById("f_matricula");
+    if(f_mat.value != "")
+    {
+        if(!validaFecha(f_mat))
+        {
+            error.push("Fecha de matriculación incorrecta");
+        }
+    }
+    else
+    {
+        error.push("Falta fecha de matriculación");
+    }
+
     if (document.getElementById("marca").value == "")
     {
         error.push("Falta la marca");
