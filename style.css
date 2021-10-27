@@ -5,3 +5,18 @@
 .visible {
     display: inline;
 }
+
+.izquierda {
+    float: left;
+}
+.derecha {
+    float: right;
+}
+
+.boton {
+    clear: both;
+}
+
+* {
+    font-family: sans-serif;
+}

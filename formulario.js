@@ -273,7 +273,7 @@ window.addEventListener("load",function()
     if(validaCP())
     {
         selectProvincia.innerHTML = "";
-        
+        // Bucle que rellena la provincia automáticamente (?)
     }
 
     selectProvincia.onclick = function()
